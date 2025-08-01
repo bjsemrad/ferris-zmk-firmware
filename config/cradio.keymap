@@ -6,8 +6,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LSHIFT k3  &ht LCTRL k4
-#define HRMR(k1,k2,k3,k4) &ht RCTRL k1  &ht RSHIFT k2  &ht RALT k3  &ht RGUI k4
+#define HRML(k1,k2,k3,k4) &mt LGUI k1  &mt LALT k2  &mt LSHIFT k3  &mt LCTRL k4
+#define HRMR(k1,k2,k3,k4) &mt RCTRL k1  &mt RSHIFT k2  &mt RALT k3  &mt RGUI k4
 /**/
 /* / { */
 /*     behaviors { */
@@ -120,16 +120,6 @@
 / {
 	behaviors {
 	
-	  ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&kp>;
-          };
-
           mt: mod_tap {
              compatible = "zmk,behavior-hold-tap";
              #binding-cells = <2>;
